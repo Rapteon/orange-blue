@@ -2,6 +2,7 @@
 #include<windows.h>
 #define ANSI_COLOR_RED   "\x1b[31m"
 
+/*Function to change text color of command line.*/
 void colorit()
 {
   HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
