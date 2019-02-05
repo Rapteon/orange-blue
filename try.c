@@ -24,6 +24,6 @@ void colorit()
 
 int main()
 {
-  colorit();
+  colorit(); /*Calling function colorit*/
   return 0;
 }
