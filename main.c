@@ -10,6 +10,7 @@ int Imager(char *imageFile, char *text);
 void welcomeScreen();
 int authenticate();
 void displayChoices();
+void feedbackScreen();
 int main(){
 	int authStat;
 	char authFail = 'Y';
@@ -25,6 +26,8 @@ int main(){
 		}
 		else{
 				displayChoices();
+				feedbackScreen();
+				authFail = 'n';
 		}
 	}
 

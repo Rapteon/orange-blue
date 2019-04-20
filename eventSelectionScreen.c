@@ -2,7 +2,9 @@
 #include<stdlib.h>
 //void event_selection_description();     /* Function declaration */
 void a_la_carte();
+void showMap();
 void itemMenu();
+void wait();
 //void event();
 //void bill();
 /*void event_selection_description()
@@ -31,6 +33,9 @@ void a_la_carte()
 	char s[100]; /*this is a string */
 	printf("\n Please enter the number of guests (including yourself as well) : \n");
 	scanf("%d",&t_no);
+
+	showMap();
+	
 	printf("\n Thank you.\n We'll book a table for %d people \n",t_no);
 	printf("\n Now this is the menu : \n");
 	//printf("\n ******MENU****** \n");
@@ -39,7 +44,9 @@ void a_la_carte()
 
 	//printf("\n what would you like to order ? ");
 	//scanf("%s",s);
-	printf("\n Great choice.\n Your order will be ready and served in 20 minutes  \n");
+	//printf("\n Great choice.\n Your order will be ready and served in 20 minutes  \n");
+
+	//printf("Your bill is %f: ", amount);
 	//printf("\n time to pay up \n");
 }
 /*void event()

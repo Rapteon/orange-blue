@@ -2,7 +2,11 @@
 #include<stdlib.h>
 void wait(float duration);
 //cost of entree
-int k;
+int k, itemCount = 0, l = 0, paymentMethod, cvvNumber;
+char billChoice;
+char cardNumber[16], upiID[50];
+char* bill[9];
+float amount = 0;
 float ecost[] ={100.0,125.0,75.0,80.0,125.0,175.0,235.0,145.0,250.0};
 char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};
 
@@ -39,12 +43,10 @@ void printDessert(){
 }
 
 void itemMenu(){
-		wait(5.0);
 		/*int ecost[] ={1,2,3,4,5,6,7,8,9};//cost of entree
 
 		char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};*/
-	    int k;
-		wait(5.0);
+
 		/*int ecost[] ={1,2,3,4,5,6,7,8,9};//cost of entree
 
 		char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};*/
@@ -61,10 +63,11 @@ void itemMenu(){
 		//below is the name of dessert
 		char* dname[] ={"classic newyork style baked cheesecake","baked blueberry cheesecake","vegan mousse","creme brulee","sizzling brownie","butterscotch sundae","tiramisu","banoffee_pie","red_velvet_lava_cupcake"};*/
 
-
+		wait(2.0);
+		int k;
 		int i, n,j, coe[9],com[9],cod[9],choice=1,co=1;
 
-	do{
+		do{
 			printf("\x1b[H\x1b[J");
 	     choice=1;
 
@@ -80,7 +83,7 @@ void itemMenu(){
 	 		scanf("%d",&n);
 
 
-		///               the code for entree              //
+			///               the code for entree              //
 
 		if(n==1){
 			/*printf (" 1.dumplings  \n 2.cottage cheese fritters	\n 3.fried babycorn\n");
@@ -92,7 +95,7 @@ void itemMenu(){
 				printf(" to enter more dishes type '1' else type '0' \n");
 				scanf("%d",&choice);
 			}
-		wait(5.0);
+
 		/*int ecost[] ={1,2,3,4,5,6,7,8,9};//cost of entree
 
 		char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};*/
@@ -101,10 +104,13 @@ void itemMenu(){
 		printf("you have chosen: \n");
 		for(j=0;j<i;j++){
 		    k=coe[j];
+				amount += ecost[k-1];
+				l++;
+				bill[l] = ename[k-1];
 			printf("%s \n",ename[k-1]);
 
 		}
-
+		itemCount += i;
 	}
 
 		/////               code for main                  ///
@@ -122,8 +128,13 @@ void itemMenu(){
 		printf("you have chosen: \n");
 		for(j=0;j<i;j++){
 		    k=com[j];
+				amount += mcost[k-1];
+				l++;
+				bill[l] = mname[k-1];
 			printf("%s \n",mname[k-1]);
+
 		}
+		itemCount += i;
 	}
 
 
@@ -142,26 +153,69 @@ void itemMenu(){
 		printf("you have chosen: \n");
 		for(j=0;j<i;j++){
 		    k=cod[j];
+				amount += dcost[k-1];
+				l++;
+				bill[l] = dname[k-1];
 			printf("%s \n",dname[k-1]);
-		}}
+
+		}
+		itemCount += i;
+	}
 		else
 		{
 		printf("Wrong entry");
-
 		}
-
+	printf("Cost: %f\n\n", amount);
+	printf("Number of items is %d\n", itemCount);
 	printf("would you like to continue ordering? if yes enter 1 if no enter 0 ");
 	scanf("%d",&co);
 
 
 	}
 	while(co==1);
+	printf("\n Great choice.\n Your order will be ready and served in 20 minutes  \n");
+	wait(2.0);
+
+	printf("Would you like to see your bill?[Y/n]: ");
+	scanf(" %c", &billChoice);
+	if(billChoice == 'Y'|| billChoice == 'y'){
+		printf("We are preparing your bill.\n");
+		printf("Please wait...\n");
+
+		printf("\t\t\t***************************MENU*************************\n\n");
+		for(i=1; i<=l; i++)
+			printf("\t\t\t%d\t%s\n", i, bill[i]);
+		printf("\t\t\tTotal =  %f\n", amount);
+		printf("Payment methods:\n");
+		printf("1 Credit Card\n");
+		printf("2 UPI\n");
+
+		scanf("%d", &paymentMethod);
+
+		switch(paymentMethod){
+			case 1: printf("Enter Card Number: ");
+							scanf("%s", cardNumber);
+							printf("Enter CVV: ");
+							scanf("%d", &cvvNumber);
+							printf("Processing your payment...");
+							wait(2.0);
+							printf("Transaction successful.\n");
+							break;
+			case 2: printf("Enter UPI ID: ");
+							scanf("%s", upiID);
+							printf("Please the request for fund transfer...");
+							wait(2.0);
+							printf("Transaction successful.\n");
+		}
+
+	}
+
 }
 
-int main(){
+/*int main(){
 
 itemMenu();
-}
+}*/
 /*
 int i, n,j, coe[9],com[9],cod[9],choice=1,co=1;
 do{
