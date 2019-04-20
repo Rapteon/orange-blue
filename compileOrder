@@ -1,1 +1,1 @@
-gcc allegroImage.c displayMenu.c feedbackScreen.c hostEventScreen.c main.c welcomeScreen.c thankYouScreen.c -I/usr/include/x86_64-linux-gnu -lallegro_font -lallegro_image -lallegro
+gcc allegroImage.c displayMenu.c feedbackScreen.c hostEventScreen.c main.c welcomeScreen.c thankYouScreen.c authenticate.c eventSelectionScreen.c itemMenu.c -I/usr/include/x86_64-linux-gnu -lallegro_font -lallegro_image -lallegro

@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<string.h>
 
-void authenticate(){
-	char username[4] = "user";
-	char password[4] = "user";
+int authenticate(){
+	int authStat = 0;
+	char username[] = "user";
+	char password[] = "user";
 
-	char uName[4], uPass[4];
+	char uName[32], uPass[32];
 
 	printf("Enter username: ");
 	scanf("%s", uName);
@@ -17,11 +18,15 @@ void authenticate(){
 	int pResult = strncmp(password, uPass, 4);
 
 	if((uResult == 0)){                                  //First checking the username and then the password.
-		if(pResult == 0)
+		if(pResult == 0){
 			printf("Access granted :)\n");
+			authStat = 1;
+		}
 		else
 			printf("Access denied :( \n");
 	}
+
+	return authStat;
 }
 /*int main(){
 	authenticate();					     //comment or uncomment to test.

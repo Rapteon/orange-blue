@@ -1,10 +1,11 @@
 #include<stdio.h>
 #include<stdlib.h>
-void event_selection_description();     /* Function declaration */
+//void event_selection_description();     /* Function declaration */
 void a_la_carte();
-void event();
-void bill();
-void event_selection_description()
+void itemMenu();
+//void event();
+//void bill();
+/*void event_selection_description()
 {
     int i;
 	printf("\n Please choose one of the following :");
@@ -23,7 +24,7 @@ void event_selection_description()
 		default:
 			printf("\n Please enter a valid option number like 1 or 2 .\n Any other option is invalid.\n");
 	}
-}
+}*/
 void a_la_carte()
 {
 	int t_no;
@@ -32,14 +33,16 @@ void a_la_carte()
 	scanf("%d",&t_no);
 	printf("\n Thank you.\n We'll book a table for %d people \n",t_no);
 	printf("\n Now this is the menu : \n");
-	printf("\n ******MENU****** \n");
-	printf("\n 1)");/*starters drinks main course dessert */
-	printf("\n what would you like to order ? ");
-	scanf("%s",s);
+	//printf("\n ******MENU****** \n");
+	itemMenu();
+	//printf("\n 1)");/*starters drinks main course dessert */
+
+	//printf("\n what would you like to order ? ");
+	//scanf("%s",s);
 	printf("\n Great choice.\n Your order will be ready and served in 20 minutes  \n");
-	printf("\n time to pay up \n");
+	//printf("\n time to pay up \n");
 }
-void event()
+/*void event()
 {
 	int i,j=0;
 	char s[100];
@@ -57,10 +60,10 @@ void event()
       continue;
       }
     }
-}
+}*/
 
-void main()                                /* starting point of program */
+/*void main()                                //comment or uncomment for testing.
 {
 	printf("\n Welcome ");
 	event_selection_description();
-}
+}*/

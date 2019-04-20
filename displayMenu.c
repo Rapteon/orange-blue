@@ -2,6 +2,7 @@
 #include<stdlib.h>
 //#include<restaurant.h>
 void hostEventScreen();
+void a_la_carte();
 
 void displayChoices(){
     int choice, status = 1;
@@ -11,18 +12,18 @@ void displayChoices(){
         printf("2. Host an Event: parties | birthdays | weddings etc.\n");
         printf("3. Cancel :\(\n");
         scanf("%d", &choice);
-	
+
         switch(choice){
             case 1: //tableSelection();
                     status = 0;
+                    a_la_carte();
                     break;
             case 2: //hostEvent();
                     status = 0;
-		    hostEventScreen();
+		                hostEventScreen();
                     break;
             case 3: exit(0);
                     break;
         }
     }
 }
-
