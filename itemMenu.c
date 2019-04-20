@@ -3,22 +3,22 @@
 void wait(float duration);
 //cost of entree
 int k;
-int ecost[] ={1,2,3,4,5,6,7,8,9};
+float ecost[] ={100.0,125.0,75.0,80.0,125.0,175.0,235.0,145.0,250.0};
 char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};
 
 //cost of maincourse
-int mcost[] ={1,2,3,4,5,6,7,8,9};
+float mcost[] ={355.0,200.0,300.0,275.0,490.0,349.0,299.0,489.0,599.0};
 char* mname[] ={"fried_salmon_with_asparagus","alfredo_gnocchi","vegetable_lasagna","pasta_arrabiata","naan_pizza","baked_cottage_cheese_and_brocolli","pesto_sphagetti","vegtarian_palette","non_vegtarian_palette"};
 
 //cost of dessert
-int dcost[] ={1,2,3,4,5,6,7,8,9};
+float dcost[] ={299.0,189.0,349.0,278.0,329.0,169.0,220.0,311.1,279.2};
 char* dname[] ={"classic newyork style baked cheesecake","baked blueberry cheesecake","vegan mousse","creme brulee","sizzling brownie","butterscotch sundae","tiramisu","banoffee_pie","red_velvet_lava_cupcake"};
 
 void printEntree(){
 	printf(" Entree~~~~~\n\n");
 	printf(" Item  - > Price\n\n");
 	for(int m = 0;  m < 9 ; m++){
-		printf(" %d\t%s\t\t%d\n",m+1,  ename[m], ecost[m]);
+		printf(" %d\t%s\t\t%f\n",m+1,  ename[m], ecost[m]);
 	}
 }
 
@@ -27,7 +27,7 @@ void printMainCourse(){
 	printf(" Item  - > Price\n\n");
 
 	for(int m = 0;  m < 9 ; m++)
-	printf(" %d\t%s\t\t%d\n",m+1,  mname[m], mcost[m]);
+	printf(" %d\t%s\t\t%f\n",m+1,  mname[m], mcost[m]);
 }
 
 void printDessert(){
@@ -35,7 +35,7 @@ void printDessert(){
 	printf(" Item  - > Price\n\n");
 
 	for(int m = 0;  m < 9 ; m++)
-	printf(" %d\t%s\t\t%d\n",m+1,  dname[m], dcost[m]);
+	printf(" %d\t%s\t\t%f\n",m+1,  dname[m], dcost[m]);
 }
 
 void itemMenu(){
@@ -44,17 +44,22 @@ void itemMenu(){
 
 		char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};*/
 	    int k;
+		wait(5.0);
+		/*int ecost[] ={1,2,3,4,5,6,7,8,9};//cost of entree
+
+		char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};*/
+	    //int k;
 
 
-	    int mcost[] ={1,2,3,4,5,6,7,8,9};//cost of main
+	    /*int mcost[] ={1,2,3,4,5,6,7,8,9};//cost of main
 		//below is the name of main
-		char* mname[] ={"fried_salmon_with_asparagus","alfredo_gnocchi","vegetable_lasagna","pasta_arrabiata","naan_pizza","baked_cottage_cheese_and_brocolli","pesto_sphagetti","vegtarian_palette","non_vegtarian_palette"};
+		char* mname[] ={"fried_salmon_with_asparagus","alfredo_gnocchi","vegetable_lasagna","pasta_arrabiata","naan_pizza","baked_cottage_cheese_and_brocolli","pesto_sphagetti","vegtarian_palette","non_vegtarian_palette"};*/
 
 
 
-	   int dcost[] ={1,2,3,4,5,6,7,8,9};//cost of dessert
+	   /*int dcost[] ={1,2,3,4,5,6,7,8,9};//cost of dessert
 		//below is the name of dessert
-		char* dname[] ={"classic newyork style baked cheesecake","baked blueberry cheesecake","vegan mousse","creme brulee","sizzling brownie","butterscotch sundae","tiramisu","banoffee_pie","red_velvet_lava_cupcake"};
+		char* dname[] ={"classic newyork style baked cheesecake","baked blueberry cheesecake","vegan mousse","creme brulee","sizzling brownie","butterscotch sundae","tiramisu","banoffee_pie","red_velvet_lava_cupcake"};*/
 
 
 		int i, n,j, coe[9],com[9],cod[9],choice=1,co=1;
@@ -86,7 +91,12 @@ void itemMenu(){
 				scanf("%d",&coe[i]);
 				printf(" to enter more dishes type '1' else type '0' \n");
 				scanf("%d",&choice);
-					}
+			}
+		wait(5.0);
+		/*int ecost[] ={1,2,3,4,5,6,7,8,9};//cost of entree
+
+		char* ename[] ={"dumplings","cottage_cheese_fritters","fried_babycorn","lettuce_wraps","rodeo_nachos","mozarella_sticks","chicken_and_mozarella sticks","potato_fingers","pita_bread_and_hummus"};*/
+	    //int k;
 
 		printf("you have chosen: \n");
 		for(j=0;j<i;j++){
@@ -148,10 +158,10 @@ void itemMenu(){
 	while(co==1);
 }
 
-/*int main(){
+int main(){
 
 itemMenu();
-}*/
+}
 /*
 int i, n,j, coe[9],com[9],cod[9],choice=1,co=1;
 do{
