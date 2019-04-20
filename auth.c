@@ -8,7 +8,7 @@ char passwordo[]="user";
 
 for(int i=0;i<4;i++)
 {l=0;
-if((password[i]==passwordo[i])and(username[i]==usernameo[i]))
+if((password[i]==passwordo[i])&&(username[i]==usernameo[i]))
 l=1;
 }
 if(l==1)
