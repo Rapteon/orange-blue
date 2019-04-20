@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-#include<conio.h>
+//#include<conio.h>
 char verify(char username[],char password[])
 {int l=0;
 char usernameo[]="user";
@@ -25,7 +25,7 @@ scanf("%s",username);
 printf("Enter the password");
 for(int i=0;i<4;i++)
 {
-ch=getch();
+ch=getchar();
 password[i]=ch;
 ch='*';
 printf("%c",ch);
