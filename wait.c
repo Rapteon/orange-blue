@@ -19,5 +19,5 @@ void wait(float duration){
 
 /*int main(){
 	wait(4.00);
-	printf("Hello: Soryy I forgot.\n");
+
 }*/

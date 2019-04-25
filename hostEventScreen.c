@@ -3,10 +3,11 @@
 void hostEventScreen();
 void displayChoices();
 void welcomeScreen();
+void event();
 void hostEventScreen(){
 	int choice;	//This is used to store value for navigation.
 	char exitVariable;
-	
+
 	printf("\n");
 
 	//Printing stuff
@@ -25,23 +26,20 @@ void hostEventScreen(){
 	printf("\t------------------------------------------\n");
 	printf("\n\n");
 	printf("*terms & conditions apply.\n\n");
+	event();
+
 
 	//Navigation code
 	printf("Navigation:\n");
-	printf("1.Back\t2.Home\t3.Quit\n");
+	printf("1.Back\t2.Quit\n");
 	fflush(stdin);
 	scanf("%d", &choice);
 
 	switch(choice){
 		case 1: displayChoices();				//eventSelectionScreen();
 						break;
-		case 2: fflush(stdout);//eventSelectionScreen();
-						welcomeScreen();
-						displayChoices();
-						break;
-		case 3:
-						printf("Are you sure you want to exit?[Y/n]: ");
-						scanf("%c", &exitVariable);
+		case 2: printf("Are you sure you want to exit?[Y/n]: ");
+						scanf(" %c", &exitVariable);
 						if(exitVariable == 'Y'|| exitVariable == 'y')
 							exit(0);
 	}

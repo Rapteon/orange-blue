@@ -4,8 +4,8 @@ void showMap(){
       int zone, floor;
 
       printf("Which floor would you like to be on?\n ");
-      printf("1 Ground\n");
-      printf("2 Halls\n");
+      printf("1 Ground\n ");
+      printf("2 Halls\n ");
       printf("3 Terrace\n");
       scanf("%d", &floor);
       switch(floor){
@@ -36,6 +36,10 @@ void showMap(){
 
                   printf("Select your zone: ");
                   scanf("%d", &zone);
+                  if(zone>4 || zone < 1){
+                    printf("Invalid Zone. :/\n");
+                    printf("Autoselecting available zone...\n");
+                  }
                   break;
           case 2:
                   printf("              |````````````````````````````````````````````|````````````````````````````````````````````|         N         \n");
@@ -65,6 +69,10 @@ void showMap(){
 
                   printf("Select your zone: ");
                   scanf("%d", &zone);
+                  if(zone>2 || zone < 1){
+                    printf("Invalid Zone. :/\n");
+                    printf("Autoselecting available zone...\n");
+                  }
                   break;
 
           case 3: printf("              |````````````````````|```````````````````````|````````````````````````````````````````````|         N         \n");
@@ -94,6 +102,10 @@ void showMap(){
 
                   printf("Select your zone: ");
                   scanf("%d", &zone);
+                  if(zone>5 || zone < 1){
+                    printf("Invalid Zone. :/\n");
+                    printf("Autoselecting available zone...\n");
+                  }
                   break;
       }
 
