@@ -5,7 +5,7 @@ void a_la_carte();
 void showMap();
 void itemMenu();
 void wait();
-//void event();
+void event();
 //void bill();
 /*void event_selection_description()
 {
@@ -31,11 +31,11 @@ void a_la_carte()
 {
 	int t_no;
 	char s[100]; /*this is a string */
-	printf("\n Please enter the number of guests (including yourself as well) : \n");
+	printf("\n Please enter the number of guests (including yourself as well) : \n ");
 	scanf("%d",&t_no);
 
 	showMap();
-	
+
 	printf("\n Thank you.\n We'll book a table for %d people \n",t_no);
 	printf("\n Now this is the menu : \n");
 	//printf("\n ******MENU****** \n");
@@ -49,25 +49,36 @@ void a_la_carte()
 	//printf("Your bill is %f: ", amount);
 	//printf("\n time to pay up \n");
 }
-/*void event()
+void event()
 {
 	int i,j=0;
 	char s[100];
+	char phone[10];
 	printf("\n Please choose the event .\n 1) Wedding\t\t\t\t\t2)Party\n");
-	while(j==0)
-	{
+
+	while(j==0){
 	scanf("%d",&i);
-	  if(i==1)
-	  printf("\n Congratulations on the wedding !!!! \n");
-	  else if(i==2)
-	  printf("\n Time to party!!!!! \n");
+	  if(i==1){
+			printf("\n Congratulations for the wedding !!!! \n");
+			printf("Please entre your phone number and our team will contact you...\n");
+			scanf("%s", phone);
+			j = 1;
+		}
+
+	  else if(i==2){
+			printf("\n Time to party!!!!! \n");
+			printf("Please enter your phone number and our team will contact you...\n");
+			scanf("%s", phone);
+			j = 1;
+		}
+
 	  else
 	  {
 	  printf("\n Invalid entry .\n Please try again .\n");
-      continue;
+      j = 0;
       }
     }
-}*/
+}
 
 /*void main()                                //comment or uncomment for testing.
 {

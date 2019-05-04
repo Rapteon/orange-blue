@@ -1,8 +1,8 @@
 #include<stdio.h>
 
 void welcomeScreen(){
-	                                                                                                                                                   
-                                                                                                                                                   
+
+
 	printf("WWWWWWWW                           WWWWWWWW               lllllll                                                                                  \n");
 	printf("W::::::W                           W::::::W               l:::::l                                                                                  \n");
 	printf("W::::::W                           W::::::W               l:::::l                                                                                  \n");
